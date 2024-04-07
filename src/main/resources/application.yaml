@@ -1,0 +1,31 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /memory-management
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pensive
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+  application:
+    name: memory management
+  security:
+    user:
+      name: admin
+      password: admin123
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
